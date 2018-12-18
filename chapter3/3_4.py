@@ -80,9 +80,9 @@ def ten_fold_cross_once(data, choice_labels=[1,2]):
     # 选择随机标签的数据, 包括标签
     choice_data0 = data.values[data.values[:,-1] == choice_labels[0],:]
     choice_data1 = data.values[data.values[:,-1] == choice_labels[1],:]
-    # 随机生成角标, 45生成的size, false不重复
+    # 随机生成脚标, 45生成的size, false不重复
     rand_indexs = np.random.choice(50,45,False)
-    # 剩下未被筛选的角标
+    # 剩下未被筛选的脚标
     other_incexs = [x for x in range(50) if x not in rand_indexs]
 
     # 测试集与训练集
@@ -132,9 +132,9 @@ def leave_one_out(data):
     choice_data1 = data.values[data.values[:, -1] == choice_labes[1], :]
     # 上下合并数据
     choice_data = np.vstack((choice_data0, choice_data1))
-    # 随机生成角标
+    # 随机生成脚标
     rand_indexs = np.random.choice(100, 99, False)
-    # 剩下未被筛选的角标
+    # 剩下未被筛选的脚标
     other_incexs = [x for x in range(100) if x not in rand_indexs]
 
     # 测试集与训练集
