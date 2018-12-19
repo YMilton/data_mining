@@ -117,8 +117,11 @@ def ten_fold_cross_many():
     acc_rates = []
     choice_labels = [[1,2],[1,3],[2,3]]
     for i in range(3):
-        rate = ten_fold_cross_once(label2digit(), choice_labels[i])
-        acc_rates.append(rate)
+        rate = 0
+        print()
+        for j in range(10):
+            rate += ten_fold_cross_once(label2digit(), choice_labels[i])
+        acc_rates.append(rate/10)
     print(acc_rates)
     print(np.mean(acc_rates))
 
