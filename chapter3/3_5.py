@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def LDA1(positive, negative):
+def LDA(positive, negative):
     '''
     Linear Discriminant Analysis, 线性判别分析
     J = w.T*Sb*w/w.T*Sw*w
@@ -31,8 +31,7 @@ if __name__ == '__main__':
     # classify the positive and negative
     positive = data[data[:, -1] == 1, :-1]
     negative = data[data[:, -1] == 0, :-1]
-    omega = LDA1(positive, negative)
-    print(omega)
+    omega = LDA(positive, negative)
     # plot the LDA
     plt.plot(positive[:,0], positive[:,1], 'bo')
     plt.plot(negative[:,0], negative[:,1], 'r+')
@@ -40,7 +39,7 @@ if __name__ == '__main__':
     lda_left = -(omega[0]*0) / omega[1]
     lda_right = -(omega[0]*0.9) / omega[1]
 
-    plt.plot([0,0.9], [lda_left, lda_right], 'k-')
+    plt.plot([0,0.9], [lda_left, lda_right], 'g-')
     plt.xlabel('density')
     plt.ylabel('sugar rate')
     plt.title('LDA')
