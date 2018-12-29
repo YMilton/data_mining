@@ -7,7 +7,7 @@ def label2digit():
     标签转换成数字
     :return:
     '''
-    iris_data = pd.read_table('../data/iris.txt', header=None, sep=",")
+    iris_data = pd.read_table('data/iris.txt', header=None, sep=",")
     categories = iris_data.loc[:, 4].values
     # 把类型转换成数字
     cc = []

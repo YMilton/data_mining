@@ -25,7 +25,7 @@ def LDA(positive, negative):
 
 if __name__ == '__main__':
     # read the data  (编号，密度，含糖量，是否好瓜)
-    workbook = pd.read_csv('../data/watermelon_3a.csv', header=None)
+    workbook = pd.read_csv('data/watermelon_3a.csv', header=None)
     # delete the row number
     data = np.array(workbook.values[:, 1:])
     # classify the positive and negative
