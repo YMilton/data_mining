@@ -3,6 +3,11 @@ import pandas as pd
 import os
 os.environ['PATH'] += os.pathsep + 'graphviz-2.38/bin'
 
+'''
+Branching for decision tree using recursion
+    @:param df: the pandas dataframe of the data_set
+    @:return root: Node, the root node of decision tree
+'''
 def TreeGenerate(df):
     # generate a new root node
     new_node = Node(None, None, {})
@@ -197,5 +202,5 @@ if __name__ == '__main__':
     df = pd.read_csv('data/watermelon_3.csv')
     root = TreeGenerate(df)
 
-    DrawPNG(root, 'decision_tree_ID3.png')
+    DrawPNG(root, 'decision_tree_ID3_4.3.png')
 
